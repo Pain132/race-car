@@ -26,6 +26,6 @@ function a () {
 	input.click()
 	triggerKeyboardEvent(input, input.value.charCodeAt(0), "keypress")
 	triggerKeyboardEvent(input, input.value.charCodeAt(0), "keyup")
-	setTimeout(a, 50 * Math.random())
+	setTimeout(a, (Math.max(Math.min(250,60000/Array.from($('.rankPanelWpm')).map(x => parseInt(x.innerText)).sort((a, b)=>b-a)[1]/5), 100)||200)/1.5 | 0)*Math.random()
 }
 a();
